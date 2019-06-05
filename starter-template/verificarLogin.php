@@ -7,18 +7,11 @@ var_dump($var);
 echo "</pre>";
 }
 
-
-/*
-
-
-$archivo=fopen("usuarios.txt", "a");
-$renglon=$_POST["correo"]."=>".$_POST["contraseña"]."\n";
-*/
 $archivo=fopen("usuarios.txt", "r");
 while(!feof($archivo))
 {
   $renglon = fgets($archivo);
-  //echo $renglon."<br>";
+
   $datosArray=explode("=>", $renglon);
 
 
@@ -29,13 +22,12 @@ while(!feof($archivo))
    $datosArray[0]
 
 ));
- 	 //echo "<a href='#' class='list-group-item'>$datosArray[0]</a> <br>";
  	 if($_POST["correo"] ==trim($datosArray[0]))
  	 {
- 	 	echo " <br> ok correo $datosArray[1] ". $_POST['contraseña'];
+ 	 	echo " <br> ok correo $datosArray[1] ". $_POST['clave'];
 
 
-      if($_POST["contraseña"]==trim($datosArray[1]))
+      if($_POST["clave"]==trim($datosArray[1]))
  	 	    {
      	 		 $_SESSION['usuario']=$_POST["correo"];
      	 		     echo "<br>  ok clave";
@@ -43,11 +35,11 @@ while(!feof($archivo))
                header("Location:listarSesion.php");
         }
         else{
-         header("Location:login.html");
+         echo "<br>  error";
         }      
      }
      else{
-      header("Location:login.html");
+      echo "<br>  error";
      }
 }
 echo "sali";
