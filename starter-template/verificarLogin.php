@@ -36,11 +36,11 @@ while(!feof($archivo))
 
 
       if($_POST["contraseña"]==trim($datosArray[1]))
- 	 	{
- 	 		 $_SESSION['usuario']=$_POST["correo"];
- 	 		echo "<br>  ok clave";
-           //var_dump($_SESSION);
-           header("Location:listarSesion.php");
+ 	 	    {
+     	 		 $_SESSION['usuario']=$_POST["correo"];
+     	 		     echo "<br>  ok clave";
+               
+               header("Location:listarSesion.php");
         }
         else{
          header("Location:login.html");
