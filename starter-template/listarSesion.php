@@ -49,7 +49,7 @@ while(!feof($archivo))
 }
 }else
 {
-    echo "<a href='login.html' class='list-group-item'>Usted no tiene permisos, debe ingresar con usuario y password</a>";
+    echo "<a href='login2.php' class='list-group-item'>Usted no tiene permisos, debe ingresar con usuario y password</a>";
 }
 
 

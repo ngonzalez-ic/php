@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-   <title>Login V3</title>
+   <title>Registro</title>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <!--===============================================================================================-->
@@ -35,10 +35,7 @@
       <div class="container-login100" style="background-image: url('images/bg-01.jpg');">
          <div class="wrap-login100">
             <form class="login100-form validate-form" action="alta.php" method="post">
-               <span class="login100-form-logo">
-                  <i class="zmdi zmdi-landscape"></i>
-               </span>
-
+              
                <span class="login100-form-title p-b-34 p-t-27">
                   Registrese
                </span>
@@ -63,6 +60,14 @@
                   <span class="focus-input100" data-placeholder="&#xf191;"></span>
                </div>
 
+               <div class="wrap-input100 validate-input">
+                        <form action="upload.php" method="post" enctype="multipart/form-data" >
+                           <input type="text" name="elNombre">
+                           <input type="file" name="archivo"  class="MiBotonUTN" />
+                        </form>
+                        <br/>
+                           <input type="submit" class="MiBotonUTN" value="Subir" />
+                     </div>   
 
 
                <div class="container-login100-form-btn">
