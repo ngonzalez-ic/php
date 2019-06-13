@@ -1,14 +1,36 @@
+
 <?php
 
+class Mensaje 
+{
+	//atributos
 
-include "mensaje.php";
-$nuevaMensaje=new Mensaje();
+	
+	public $nombre;
+	public $mensaje;
+
+	function guardarM()
+	{
+		$archivo=fopen("mensaje.txt", "a");
+
+      $renglon=$this->nombre."=>".$this->mensaje."\n";
+
+		fwrite($archivo,$renglon);
+
+		fclose($archivo);
+
+	}
+
+	function mostrar($algo)
+	{
+		echo "hola".$algo;
+
+	}
+
+	
 
 
-//$nuevaPersona->mostrar($_POST['correo']);
-$nuevaMensaje->nombre=$_POST['nombre'];
-$nuevaMensaje->apellido=$_POST['mensaje'];
-$nuevaMensaje->guardar();
+}
 
 
 ?>
