@@ -1,4 +1,8 @@
+<?php
 
+session_start();
+include "menu.php";
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,12 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+    <link rel="icon" href="images/icons/pencil.png">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>Listado de mensajes</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/chat.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -22,9 +27,10 @@
 
   <body>
 
+
       <?php
         if(isset($_SESSION['usuario']))
-        include "menu.php";
+        
       ?>
 
     <main role="main" class="container">
@@ -37,7 +43,7 @@
         }
       ?>
     </main><!-- /.container -->
-
+x
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

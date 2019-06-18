@@ -10,9 +10,9 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+    <link rel="icon" href="images/icons/pencil.png">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>Listado de usuarios</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -32,8 +32,6 @@ session_start();
    ?>
 
     <main role="main" class="container">
-
-
       <?php
 
 // isset controla que este logueado el usuario
@@ -45,7 +43,9 @@ while(!feof($archivo))
 {
   $renglon = fgets($archivo);
   //echo $renglon."<br>";
+  $alias=(explode('=>',$renglon,1));
   echo "<a href='#' class='list-group-item'>$renglon</a>";
+  echo $alias;
 }
 }else
 {

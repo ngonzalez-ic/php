@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="images/icons/user.png">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>chat</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">

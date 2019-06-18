@@ -36,28 +36,19 @@ session_start();
    <main role="main" class="container">
 
       <div class="starter-template">
-         <form action="chat.php" method="post">
+         <form id="myform" action="chat.php" method="post" >
             <div>
-
-               <input name ="usuario" readonly class="form-control mr-sm-2" type="text"  aria-label="Search" value="">
-              <?php
-                if(isset($_SESSION['usuario']))
-                echo $_SESSION['usuario'];
-               ?>
                 
              </div>
 
              <div class="form-group" text-align: right>
                   <label for="exampleInputEmail1">Mensaje</label>
-                  <input type="text" class="form-control" id="Mensaje" aria-describedby="Mensaje"
-                  placeholder="Tu Mensaje" name="mensaje">
+                  <input type="text" class="form-control" id="mensaje" name="mensaje" aria-describedby="Mensaje"
+                  placeholder="Tu Mensaje">
                </div>
 
 
-            <!--<div class="form-group"><input type="file" name="foto" class="MiBotonUTN" />
-            </div>-->
-
-            <button type="submit" class="btn btn-primary">Dar de alta</button>
+            <button type="submit" class="btn btn-primary" value="Validate!">Enviar Mensaje</button>
          </form>
       </div>
       
@@ -73,6 +64,24 @@ session_start();
    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
    <script src="../../../../assets/js/vendor/popper.min.js"></script>
    <script src="../../../../dist/js/bootstrap.min.js"></script>
+   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
+   <script>
+         jQuery.validator.setDefaults({
+      debug: true,
+      success: "valid"
+      });
+      $( "#myform" ).validate({
+      rules: {
+         mensaje: {
+            required: true,
+            minlength: 3
+         }
+      }
+      });
+   </script>
 </body>
 
 </html>
