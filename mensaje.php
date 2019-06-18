@@ -1,19 +1,20 @@
 
 <?php
+session_start();
 
 class Mensaje 
 {
 	//atributos
 
 	
-	public $nombre;
+	$_SESSION['usuario'];
 	public $mensaje;
 
 	function guardarM()
 	{
 		$archivo=fopen("mensaje.txt", "a");
 
-      $renglon=$this->nombre."=>".$this->mensaje."\n";
+      $renglon=$this->$_SESSION['usuario']."=>".$this->mensaje."\n";
 
 		fwrite($archivo,$renglon);
 

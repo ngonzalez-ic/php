@@ -32,7 +32,7 @@ while(!feof($archivo))
      	 		 $_SESSION['usuario']=$_POST["correo"];
      	 		     echo "<br>  ok clave";
                
-               header("Location:listarSesion.php");
+               header("Location:crearMensaje.php");
         }
         else{
          echo "<br>  error";

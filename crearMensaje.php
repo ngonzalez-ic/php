@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -6,9 +12,9 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <meta name="description" content="">
    <meta name="author" content="">
-   <link rel="icon" href="../../../../favicon.ico">
+   <link rel="icon" href="images/icons/pencil.png">
 
-   <title>Starter Template for Bootstrap</title>
+   <title>Crea tu me</title>
 
    <!-- Bootstrap core CSS -->
    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -22,27 +28,30 @@
 </head>
 
 <body>
+      <?php
+        if(isset($_SESSION['usuario']))
+        include "menu.php";
+      ?>
 
-<?php
-
-include "menu.php";
-?>
    <main role="main" class="container">
 
       <div class="starter-template">
          <form action="chat.php" method="post">
+            <div>
 
-            <div class="form-group" text-align: right>
-               <label for="exampleInputEmail1">Nombre</label>
-               <input type="text" class="form-control" id="nombre" aria-describedby="nombre" placeholder="Tu nombre"
-                  name="nombre">
-            </div>
+               <input name ="usuario" readonly class="form-control mr-sm-2" type="text"  aria-label="Search" value="">
+              <?php
+                if(isset($_SESSION['usuario']))
+                echo $_SESSION['usuario'];
+               ?>
+                
+             </div>
 
-            <div class="form-group" text-align: right>
-               <label for="exampleInputEmail1">Mensaje</label>
-               <input type="text" class="form-control" id="Mensaje" aria-describedby="Mensaje"
+             <div class="form-group" text-align: right>
+                  <label for="exampleInputEmail1">Mensaje</label>
+                  <input type="text" class="form-control" id="Mensaje" aria-describedby="Mensaje"
                   placeholder="Tu Mensaje" name="mensaje">
-            </div>
+               </div>
 
 
             <!--<div class="form-group"><input type="file" name="foto" class="MiBotonUTN" />

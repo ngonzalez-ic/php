@@ -22,20 +22,20 @@
 
   <body>
 
-    <?php
-
+      <?php
+        if(isset($_SESSION['usuario']))
         include "menu.php";
-     ?>
+      ?>
 
     <main role="main" class="container">
       <?php
-$chat=fopen("mensaje.txt", "r");
-while(!feof($chat))
-{
-  $renglon = fgets($chat);
-  echo $renglon."<br>";
-}
-?>
+        $chat=fopen("mensaje.txt", "r");
+        while(!feof($chat))
+        {
+          $renglon = fgets($chat);
+          echo $renglon."<br>";
+        }
+      ?>
     </main><!-- /.container -->
 
     <!-- Bootstrap core JavaScript
