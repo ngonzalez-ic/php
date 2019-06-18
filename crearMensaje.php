@@ -36,7 +36,7 @@ session_start();
    <main role="main" class="container">
 
       <div class="starter-template">
-         <form id="myform" action="chat.php" method="post" >
+         <form action="chat.php" method="post" >
             <div>
                 
              </div>
