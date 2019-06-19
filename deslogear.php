@@ -9,5 +9,5 @@ $_SESSION['usuario']= null;
 session_unset(); 
  
 session_destroy(); 
-//header("Location:listarSesion.php");
+header("Location:login2.php");
 ?>

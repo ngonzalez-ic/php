@@ -10,5 +10,7 @@ $nuevaMensaje->nombre=$_SESSION['usuario'];
 $nuevaMensaje->mensaje=$_POST['mensaje'];
 $nuevaMensaje->guardarM();
 
-echo "<p class='list-group-item'>su mensaje fue enviado</p>";
+echo "<p class='list-group-item'>Su mensaje fue enviado</p>" ;
+
+header("Location:crearMensaje.php");
 ?>

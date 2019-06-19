@@ -48,5 +48,5 @@ echo "sali";
 
 fclose($archivo);
 
-
+header("Location:crearMensaje.php");
 ?>

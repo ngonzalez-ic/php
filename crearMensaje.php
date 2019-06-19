@@ -31,6 +31,7 @@ session_start();
       <?php
         if(isset($_SESSION['usuario']))
         include "menu.php";
+      
       ?>
 
    <main role="main" class="container">
