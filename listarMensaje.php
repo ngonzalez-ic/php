@@ -10,6 +10,7 @@ include "menu.php";
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+
     <link rel="icon" href="images/icons/pencil.png">
 
     <title>Listado de mensajes</title>
@@ -39,10 +40,17 @@ include "menu.php";
         while(!feof($chat))
         {
           $renglon = fgets($chat);
-          echo $renglon."<br>";
+          //echo $renglon."<br>";
+          $conversacion = explode(":" , $renglon);
+          //echo $conversacion[0]." dice:"."<br>";
+           echo "<a href='#' class='list-group-item'>$conversacion[0] dice:<br> <br> $conversacion[1]</a>";
+           
+         
         }
       ?>
-    </main><!-- /.container -->
+    </main>
+
+    <!-- /.container -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

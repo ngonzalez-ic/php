@@ -43,9 +43,9 @@ while(!feof($archivo))
 {
   $renglon = fgets($archivo);
   //echo $renglon."<br>";
-  $alias=(explode('=>',$renglon,1));
-  echo "<a href='#' class='list-group-item'>$renglon</a>";
-  echo $alias;
+  $alias=explode("=>",$renglon);
+  echo "<a href='#' class='list-group-item'>$alias[0]</a>";
+  
 }
 }else
 {
