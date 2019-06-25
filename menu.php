@@ -13,7 +13,7 @@
           <?php
              echo $_SESSION['usuario'];
             ?>">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name ="Perfil" >Perfil</button>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name ="Perfil" onclick="href='\php\listarSesion.php'">Perfil</button>
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name ="Salir">Salir</button>
         </form>
       </div>
