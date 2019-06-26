@@ -13,19 +13,15 @@ while(!feof($archivo))
 
  	 if($_POST["correo"] ==trim($datosArray[0]))
  	 {
- 	 	echo " <br> ok correo $datosArray[1] ". $_POST['clave'];
+ 	 	 $datosArray[1] . $_POST['clave'];
       if($_POST["clave"]==trim($datosArray[1]))
  	 	    {
      	 		 $_SESSION['usuario']=$_POST["correo"];
                header("Location:crearMensaje.php");
                }
-        else{
-         
-        }  
         
      }
-     else{
-     }
+     
    }
      echo '<script language="javascript">alert("Validar los datos ingresador");</script>'; 
 

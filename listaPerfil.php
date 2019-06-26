@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include "menu.php";
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -10,14 +10,12 @@ include "menu.php";
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <link rel="icon" href="images/icons/pencil.png">
 
-    <title>Listado de mensajes</title>
+    <title>Listado de usuarios</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/chat.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -28,36 +26,28 @@ include "menu.php";
 
   <body>
 
+    <?php
 
-      <?php
-        if(isset($_SESSION['usuario']))
-        
-      ?>
+      include "menu.php";
+   ?>
 
     <main role="main" class="container">
-      <?php
-        $chat=fopen("mensaje.txt", "r");
-        while(!feof($chat))
-        {
-          $renglon = fgets($chat);
-          //echo $renglon."<br>";
-          
-            $conversacion = explode(":" , $renglon);
-          //echo $conversacion[0]." dice:"."<br>";
-            if (isset ($conversacion[1]))
-            {
-              echo "<a href='#' class='list-group-item'>$conversacion[0] dice:<br> <br> $conversacion[1]</a>";
-           
-
-            }
-           
-          } 
-                   
-        
-      ?>
-    </main>
-
-    <!-- /.container -->
+      
+<div class="wrap-input100 validate-input">
+  <form action="upload.php" method="POST" enctype="multipart/form-data">
+    <input type="text" name="elNombre">
+    <input type="file" name="archivo" class="MiBotonUTN" />
+  </form>
+<br />
+    <input type="submit" class="MiBotonUTN" value="Subir" />
+</div>
+   
+<!--div class="list-group">
+  <a href="#" class="list-group-item">First item</a>
+  <a href="#" class="list-group-item">Second item</a>
+  <a href="#" class="list-group-item">Third item</a>
+</div-->
+    </main><!-- /.container -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
