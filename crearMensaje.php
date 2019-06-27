@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -6,9 +12,9 @@
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
    <meta name="description" content="">
    <meta name="author" content="">
-   <link rel="icon" href="../../../../favicon.ico">
+   <link rel="icon" href="images/icons/pencil.png">
 
-   <title>Starter Template for Bootstrap</title>
+   <title>Crea tu me</title>
 
    <!-- Bootstrap core CSS -->
    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
@@ -22,33 +28,28 @@
 </head>
 
 <body>
+      <?php
+        if(isset($_SESSION['usuario']))
+        include "menu.php";
+      
+      ?>
 
-<?php
-
-include "menu.php";
-?>
    <main role="main" class="container">
 
       <div class="starter-template">
-         <form action="chat.php" method="post">
+         <form action="chat.php" method="post" >
+            <div>
+                
+             </div>
 
-            <div class="form-group" text-align: right>
-               <label for="exampleInputEmail1">Nombre</label>
-               <input type="text" class="form-control" id="nombre" aria-describedby="nombre" placeholder="Tu nombre"
-                  name="nombre">
-            </div>
-
-            <div class="form-group" text-align: right>
-               <label for="exampleInputEmail1">Mensaje</label>
-               <input type="text" class="form-control" id="Mensaje" aria-describedby="Mensaje"
-                  placeholder="Tu Mensaje" name="mensaje">
-            </div>
+             <div class="form-group" text-align: right>
+                  <label for="exampleInputEmail1">Mensaje</label>
+                  <input type="text" class="form-control" id="mensaje" name="mensaje" aria-describedby="Mensaje"
+                  placeholder="Tu Mensaje">
+               </div>
 
 
-            <!--<div class="form-group"><input type="file" name="foto" class="MiBotonUTN" />
-            </div>-->
-
-            <button type="submit" class="btn btn-primary">Dar de alta</button>
+            <button type="submit" class="btn btn-primary" value="Validate!">Enviar Mensaje</button>
          </form>
       </div>
       
@@ -64,6 +65,24 @@ include "menu.php";
    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
    <script src="../../../../assets/js/vendor/popper.min.js"></script>
    <script src="../../../../dist/js/bootstrap.min.js"></script>
+   <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
+   <script>
+         jQuery.validator.setDefaults({
+      debug: true,
+      success: "valid"
+      });
+      $( "#myform" ).validate({
+      rules: {
+         mensaje: {
+            required: true,
+            minlength: 3
+         }
+      }
+      });
+   </script>
 </body>
 
 </html>

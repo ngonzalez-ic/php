@@ -1,4 +1,8 @@
+<?php
 
+session_start();
+include "menu.php";
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,12 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Starter Template for Bootstrap</title>
+    <link rel="icon" href="images/icons/pencil.png">
+
+    <title>Listado de mensajes</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/chat.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -22,21 +28,36 @@
 
   <body>
 
-    <?php
 
-        include "menu.php";
-     ?>
+      <?php
+        if(isset($_SESSION['usuario']))
+        
+      ?>
 
     <main role="main" class="container">
       <?php
-$chat=fopen("mensaje.txt", "r");
-while(!feof($chat))
-{
-  $renglon = fgets($chat);
-  echo $renglon."<br>";
-}
-?>
-    </main><!-- /.container -->
+        $chat=fopen("mensaje.txt", "r");
+        while(!feof($chat))
+        {
+          $renglon = fgets($chat);
+          //echo $renglon."<br>";
+          
+            $conversacion = explode(":" , $renglon);
+          //echo $conversacion[0]." dice:"."<br>";
+            if (isset ($conversacion[1]))
+            {
+              echo "<a href='#' class='list-group-item'>$conversacion[0] dice:<br> <br> $conversacion[1]</a>";
+           
+
+            }
+           
+          } 
+                   
+        
+      ?>
+    </main>
+
+    <!-- /.container -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

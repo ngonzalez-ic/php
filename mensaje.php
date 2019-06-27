@@ -13,7 +13,7 @@ class Mensaje
 	{
 		$archivo=fopen("mensaje.txt", "a");
 
-      $renglon=$this->nombre."=>".$this->mensaje."\n";
+      $renglon=$this->nombre.":".$this->mensaje."\n";
 
 		fwrite($archivo,$renglon);
 

@@ -32,30 +32,15 @@ session_start();
    ?>
 
     <main role="main" class="container">
-      <?php
-
-// isset controla que este logueado el usuario
-
-if(isset($_SESSION['usuario']))
-{
-$archivo=fopen("usuarios.txt", "r");
-while(!feof($archivo))
-{
-  $renglon = fgets($archivo);
-  //echo $renglon."<br>";
-  $alias=explode("=>",$renglon);
-  echo "<a href='#' class='list-group-item'>$alias[0]</a>";
-  
-}
-}else
-{
-    echo "<a href='login2.php' class='list-group-item'>Usted no tiene permisos, debe ingresar con usuario y password</a>";
-}
-
-
-
-?>
-
+      
+<div class="wrap-input100 validate-input">
+  <form action="upload.php" method="POST" enctype="multipart/form-data">
+    <input type="text" name="elNombre">
+    <input type="file" name="archivo" class="MiBotonUTN" />
+  </form>
+<br />
+    <input type="submit" class="MiBotonUTN" value="Subir" />
+</div>
    
 <!--div class="list-group">
   <a href="#" class="list-group-item">First item</a>

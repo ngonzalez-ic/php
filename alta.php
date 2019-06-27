@@ -12,5 +12,5 @@ $nuevaPersona->nombre=$_POST['nombre'];
 $nuevaPersona->apellido=$_POST['apellido'];
 $nuevaPersona->guardar();
 
-
+header("Location:login2.php");
 ?>
