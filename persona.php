@@ -21,9 +21,10 @@ class Persona
 
 	}
 
-	function mostrar($algo)
+	function mostrar($nombre, $apellido)
 	{
-		echo "hola".$algo;
+      $login=$this->nombre;
+      echo "si muestar$login";
 
 	}
 

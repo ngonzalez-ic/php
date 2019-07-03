@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+   function realizarProceso(valorCaja1, valorCaja2) {
+      var parametros = {
+         "valorCaja1": valorCaja1,
+         "valorCaja2": valorCaja2,
+
+      };
+      $.ajax({
+         data: parametros,
+         url: 'back.php',
+         type: 'post',
+         beforeSend: function () {
+            $("#resultado").html("Prosesando, espere por favor")
+         },
+         success: function (response) {
+            $("#resultado").html(response);
+         }
+      });
+   }
+</script>
+
+<head>
+   <title>Title of the document</title>
+</head>
+
+<body>
+   introduce valor 1
+   <input type="text" name "caja_texto" id="valor1" value"0" />
+   <br>
+   introduce valor 2
+   <input type="text" name "caja_texto" id="valor2" value"0" />
+   <br>
+   suma
+   <input type="button" href="javascript:;"
+      onclick="realizarProceso($('#valor1').val(),$('#valor2').val()); return false;" value="calcula" />
+   <br>
+   resultado :<span id="resultado">0 </span>
+</body>
+
+</html>

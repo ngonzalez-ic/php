@@ -42,7 +42,13 @@ include "menu.php";
 						<td width="50%">
 
 							<div id="divFrm" style="height:350px;overflow:auto;margin-top:20px">
-								
+								<li>
+                           <?php 
+                          include "persona.php";
+                          mostrar()
+                           ?>
+                        </li>
+
 							</div>
 						</td>
 						<td style="padding-left:3%">
