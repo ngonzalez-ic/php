@@ -1,66 +1,67 @@
 <?php
-
 session_start();
 include "menu.php";
 ?>
 <!doctype html>
 <html>
 	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="./img/utnLogo.png" rel="icon" type="image/png" />
-		
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		 <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
 
-		<!-- jQuery library -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	    <link rel="icon" href="images/icons/pencil.png">
 
-		<!-- Latest compiled JavaScript -->
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	    <title>Listado de mensajes</title>
 
-		<link rel="stylesheet" type="text/css" href="estilo.css">
-		<link rel="stylesheet" type="text/css" href="animacion.css">
-	
-		<title>Subir archivos con PHP</title>
+	    <!-- Bootstrap core CSS -->
+	    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+	    <link href="css/chat.css" rel="stylesheet">
+
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+	    <!-- Custom styles for this template -->
+	    <link href="starter-template.css" rel="stylesheet">
+<title>Subir archivos con PHP</title>
 	</head>
 	<body>
 	<div class="container">
 		<div class="page-header">
-			<h1>Subir un archivo</h1>      
+			<h1>Perfil de <?php
+             echo $_SESSION['usuario'];
+            ?></h1>      
 		</div>
 
 		<div class="CajaInicio animated bounceInRight" >
-			<h1>Ejemplo</h1>
+			<h1>Elija una imagen para su perfil</h1>
 
 			<table style="width:100%">
 				<tbody>
 					<tr>
-						<td width="70%">
+						<td width="50%">
 
 							<div id="divFrm" style="height:350px;overflow:auto;margin-top:20px">
-								<form action="<?php echo $path; ?>" method="post" enctype="multipart/form-data" >
+								
+							</div>
+						</td>
+						<td style="padding-left:3%">
+							<ul style="list-style-type:disc">
+								<form action="upload.php" method="post" enctype="multipart/form-data" >
 									<input type="text" name="elNombre">
 									<input type="file" name="archivo"  class="MiBotonUTN" /> 
 									<br/>
 									<input type="submit" class="MiBotonUTN" value="Subir" />
 								</form>
-							</div>
-						</td>
-						<td style="padding-left:3%">
-							<ul style="list-style-type:disc">
-								<li>Form</li>
-								<li>method => post </li>
-								<li>enctype => multipart/form-data </li>
 							</ul>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</div>
-		<a href="./index.html" class="btn btn-info" >Volver al Inicio</a>
+		<a href="listarMensaje.php" class="btn btn-info" >Volver al Inicio</a>
 	</div>
+							
 								
 	</body>
 </html>
