@@ -1,8 +1,9 @@
 <?php
-
 session_start();
-include "menu.php";
+
+include 'menu.php';
 ?>
+
 <!doctype html>
 <html>
 	<head>
@@ -11,7 +12,7 @@ include "menu.php";
 	    <meta name="description" content="">
 	    <meta name="author" content="">
 
-	    <link rel="icon" href="images/icons/pencil.png">
+	    <link rel="icon" href="images/icons/camera.png">
 
 	    <title>Listado de mensajes</title>
 
@@ -28,9 +29,11 @@ include "menu.php";
 	</head>
 	<body>
 	<div class="container">
+
 		<div class="page-header">
 			<h1>Perfil de <?php
              echo $_SESSION['usuario'];
+
             ?></h1>      
 		</div>
 
@@ -43,7 +46,16 @@ include "menu.php";
 						<td width="50%">
 
 							<div id="divFrm" style="height:350px;overflow:auto;margin-top:20px">
-								
+						
+                           <?php 
+
+		                    	echo "Nombre:" .$_SESSION['nombre'] ;
+
+								echo "<br>Apellido:". $_SESSION['apellido'];
+
+                           ?>
+                        
+
 							</div>
 						</td>
 						<td style="padding-left:3%">
@@ -60,7 +72,9 @@ include "menu.php";
 				</tbody>
 			</table>
 		</div>
-		<a href="listarMensaje.php" class="btn btn-info" >Volver al Inicio</a>
+			<a href="listarMensaje.php" class="btn btn-info" >Volver al Inicio</a>
+		   	<a href="./listarSesion.php" class="btn btn-primary" >Listar sesiones</a>
+  			<a href="./crearMensaje.php" class="btn btn-primary justify-content" >Crear mensajes</a>
 	</div>
 							
 								

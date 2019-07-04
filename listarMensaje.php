@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include "menu.php";
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -10,7 +10,6 @@ include "menu.php";
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <link rel="icon" href="images/icons/pencil.png">
 
     <title>Listado de mensajes</title>
@@ -31,6 +30,7 @@ include "menu.php";
 
       <?php
         if(isset($_SESSION['usuario']))
+          include "menu.php";
         
       ?>
 
@@ -56,6 +56,9 @@ include "menu.php";
         
       ?>
     </main>
+      <a href="./crearMensaje.php" class="btn btn-primary" >Crear mensaje</a>
+      <a href="./listarSesion.php" class="btn btn-primary justify-content" >Listar sesiones</a>
+
 
     <!-- /.container -->
 

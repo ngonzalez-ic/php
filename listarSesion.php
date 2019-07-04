@@ -10,7 +10,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="images/icons/pencil.png">
+    <link rel="icon" href="images/icons/user.png">
 
     <title>Listado de usuarios</title>
 
@@ -55,6 +55,9 @@ while(!feof($archivo))
 
 
 ?>
+
+  <a href="./crearMensaje.php" class="btn btn-primary" >Crear mensaje</a>
+  <a href="./listarMensaje.php" class="btn btn-primary justify-content" >Ver mensajes</a>
 
    
 <!--div class="list-group">

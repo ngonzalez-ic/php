@@ -56,6 +56,10 @@ session_start();
 
    </main><!-- /.container -->
 
+   <a href="./listarSesion.php" class="btn btn-primary" >Listar sesiones</a>
+  <a href="./listarMensaje.php" class="btn btn-primary justify-content" >Ver mensajes</a>
+
+
    <!-- Bootstrap core JavaScript
     ================================================== -->
    <!-- Placed at the end of the document so the pages load faster -->
