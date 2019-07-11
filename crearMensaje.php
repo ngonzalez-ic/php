@@ -45,7 +45,7 @@ session_start();
              <div class="form-group" text-align: right>
                   <label for="exampleInputEmail1">Mensaje</label>
                   <input type="text" class="form-control" id="mensaje" name="mensaje" aria-describedby="Mensaje"
-                  placeholder="Tu Mensaje">
+                  placeholder="Tu Mensaje" required="">
                </div>
 
 
@@ -55,6 +55,10 @@ session_start();
       
 
    </main><!-- /.container -->
+
+   <a href="./listarSesion.php" class="btn btn-primary" >Listar sesiones</a>
+  <a href="./listarMensaje.php" class="btn btn-primary justify-content" >Ver mensajes</a>
+
 
    <!-- Bootstrap core JavaScript
     ================================================== -->

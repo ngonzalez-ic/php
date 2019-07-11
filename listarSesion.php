@@ -10,7 +10,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="images/icons/pencil.png">
+    <link rel="icon" href="images/icons/user.png">
 
     <title>Listado de usuarios</title>
 
@@ -38,15 +38,23 @@ session_start();
 
 if(isset($_SESSION['usuario']))
 {
-$archivo=fopen("usuarios.txt", "r");
-while(!feof($archivo))
-{
-  $renglon = fgets($archivo);
-  //echo $renglon."<br>";
-  $alias=explode("=>",$renglon);
-  echo "<a href='#' class='list-group-item'>$alias[0]</a>";
-  
-}
+  if($_SESSION['usuario'] =="admin@admin.com")
+  {
+    $archivo=fopen("usuarios.txt", "r");
+    while(!feof($archivo))
+    {
+      $renglon = fgets($archivo);
+      //echo $renglon."<br>";
+      $alias=explode("=>",$renglon);
+      echo "<a href='#' class='list-group-item'>$alias[0]</a>";
+      
+      }
+  }
+  else
+  {
+    echo "<a href='deslogear.php' class='list-group-item'>Usted no tiene permisos de adminstrador , debe ingresar como admin</a>";
+  }
+
 }else
 {
     echo "<a href='login2.php' class='list-group-item'>Usted no tiene permisos, debe ingresar con usuario y password</a>";
@@ -55,6 +63,9 @@ while(!feof($archivo))
 
 
 ?>
+
+  <a href="./crearMensaje.php" class="btn btn-primary" >Crear mensaje</a>
+  <a href="./listarMensaje.php" class="btn btn-primary justify-content" >Ver mensajes</a>
 
    
 <!--div class="list-group">

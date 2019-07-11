@@ -1,4 +1,4 @@
-
+<link rel="icon" href="images/icons/camera.png">
 
     <nav class="navbar navbar-expand-md navbar navbar-dark bg-primary
     fixed-top">

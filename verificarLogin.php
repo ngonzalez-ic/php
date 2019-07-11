@@ -17,6 +17,9 @@ while(!feof($archivo))
       if($_POST["clave"]==trim($datosArray[1]))
  	 	    {
      	 		 $_SESSION['usuario']=$_POST["correo"];
+           $_SESSION['nombre']=$datosArray[2];
+           $_SESSION['apellido']=$datosArray[3];
+
                header("Location:crearMensaje.php");
                }
         
